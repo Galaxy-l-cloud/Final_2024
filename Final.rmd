@@ -18,6 +18,10 @@ FinalDat <-read.csv(file="finalSumr2024.csv",header=TRUE)
 FinalData <- FinalDat  %>% select(-one_of("X"))
 FinalData <- FinalData %>%
 mutate(across(where(is.character), as.factor))
+male = filter(FinalData, sex =="M")
+female = filter (FinalData, sex =="F")
+lgbtq = filter(FinalData, LGBTQ =="gay")
+druguser = filter(FinalData, DrugUser =="yes")
 ```
 
 # Introduction
@@ -25,6 +29,46 @@ mutate(across(where(is.character), as.factor))
 A new  preventative vaccine (covid921) is under test in clinical trials. Given the nature of this vaccine it is suspected that the drug may exhibit different effectiveness across the variety of subpopulations tracked. Consider population subgroups by gender( guys and gals), drug use, and sexual orientation. Write a complete report that separately considers this drug for each subgroup and your recommendations as to whether people in the subgroup should take the vaccine. Structure your report in four sections each devoted to one of the four subgroups, use null and alternative hypothesis statements and correct statistical verbage when referencing p-values in conclusions.
 
 ## Males
+
+### Graphical Results
+
+
+```{r}
+dd2 <- male %>% group_by(infected,treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
+
+
+# the group_by followed by summarize(count=n())
+
+basicC <- ggplot(dd2,aes(x=infected,y=count,fill=treatment))
+basicC + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
+
+The graphical data shows us that male individuals that took the vaccine in contrast to the male individuals that took the placebo were less likey to get Covid19. Less than 30% of males that took the vaccine got sick from Covid19 while more than 60% of males that took the placebo did get sick from Covid19.
+
+
+
+### Numerical
+
+```{r}
+table1 <- xtabs(~infected + treatment, data=male)
+rowPerc(table1)
+colPerc(table1)
+```
+
+### Inferential
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+malefisher <- fisher.test(table1)
+malefisher
+```
+
 
 
 ## Females
