@@ -60,6 +60,11 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
+
+The numerical results for male individuals shows us that the males that took the placebo were 73.80% more likely to get Covid19. The males that took the vaccine were at only 26.20% in comparison. We also see that males that did not get sick from covid whether they took the placebo or the vaccine were at 50.01% for the individuals that took the placebo and 49.99% for those that took the vaccine. We are also given ratios of the likelyhood of placebo and vaccine males in contracting the virus. For males that took the placebo vs males thatt were vaccinated it was a 3:1 ratio, so again males that took the placebo were more likely to get covid than those that took the vaccine.
+
+From this data it is recommended that males take the Covid19 vaccine which statistically reduces the chance of getting sick.
+
 ### Inferential
 
 ```{r}
