@@ -75,10 +75,39 @@ malefisher
 ```
 
 
-Three tests were performed to identify if dying from covid is independent of an indivudals sex.The p-value for the first test 2.2e-16, for the second test the p-value is 0 and for the third test the p-value is also 2.2e-16. This indicates the statistical probability of dying from covid being related to the sex of the individual. The p-value of 2.2e-16 is very small indicating the probability's of males that died from the virus.
+Three tests were performed to identify if dying from covid is independent of an individuals sex.The p-value for the first test 2.2e-16, for the second test the p-value is 0 and for the third test the p-value is also 2.2e-16. This indicates the statistical probability of dying from covid being related to the sex of the individual. The p-value of 2.2e-16 is very small indicating the probability's vaccine effectiveness in male individuals. The odds ratio represents how much more likely males that took a placebo vs the vaccine were to get the Covid19 virus.
+
+### Confidence Interval
+
+
+
+
+
 
 
 ## Females
+
+### Graphical Results
+
+```{r}
+dd2 <- female %>% group_by(infected,treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
+
+
+# the group_by followed by summarize(count=n())
+
+basicC <- ggplot(dd2,aes(x=infected,y=count,fill=treatment))
+basicC + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
+
+The graphical data shows us that female individuals that took the vaccine in contrast to the female individuals that took the placebo were less likely to get Covid19. Less than 40% of females that took the vaccine got sick from Covid19 while more than 60% of females that took the placebo did get sick from Covid19. However it is important to mention that a large number of females still got sick from covid even if they took the vaccine.
+
+
+
 
 
 ## LGBTQ
