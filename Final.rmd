@@ -204,8 +204,18 @@ The numerical results for lgbtq individuals shows us that the lgbtq group that t
 From this data we can see that it is highly recommended that lgbtq individuals take the covid19 vaccine as statistically it is very effective.
 
 
-
 ### Inferential Results
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+lgbtqfisher <- fisher.test(table1)
+lgbtqfisher
+```
+
+
+Three tests were performed to identify if dying from covid is independent of an individuals sexual orientation. The p-value for the first test 2e-06, for the second test the p-value is 0 and for the third test the p-value is 7e-07. This indicates the statistical probability of dying from covid being related to the sexual orientation of the individual. The p-value of 2e-06 is very small indicating the probability's vaccine effectiveness in lgbtq individuals. The odds ratio of 4.3 represents how much more likely lgbtq's that took a placebo vs the vaccine were to get the Covid19 virus.
+
 
 ### Confidence Interval
 
