@@ -107,7 +107,17 @@ basicCC + geom_bar(stat="identity", position = "dodge")
 The graphical data shows us that female individuals that took the vaccine in contrast to the female individuals that took the placebo were less likely to get Covid19. Less than 40% of females that took the vaccine got sick from Covid19 while more than 60% of females that took the placebo did get sick from Covid19. However it is important to mention that a large number of females still got sick from covid even if they took the vaccine.
 
 
+### Numerical
 
+```{r}
+table1 <- xtabs(~infected + treatment, data=female)
+rowPerc(table1)
+colPerc(table1)
+```
+
+The numerical results for female individuals shows us that the females that took the placebo were 64.93% more likely to get Covid19. The females that took the vaccine were at 35.07% in comparison. We also see that females that did not get sick from covid whether they took the placebo or the vaccine were at 49.94% for the individuals that took the placebo and 50.06% for those that took the vaccine. We are also given ratios of the likelihood of placebo and vaccine females in contracting the virus. For females that took the placebo vs females that were vaccinated it was a 3:1 ratio, so again females that took the placebo were more likely to get covid than those that took the vaccine.
+
+From this data we can see that while the vaccine is mostly effective, a lot of females that took the vaccine still got sick from Covid, However more half of females that took the placebo got sick, so it is still recommended that females take the vaccine.
 
 
 ## LGBTQ
