@@ -80,9 +80,23 @@ Three tests were performed to identify if dying from covid is independent of an 
 ### Confidence Interval
 
 
+```{r}
+effect <- malefisher$p.value/(malefisher$p.value +1)
+effectivenessmale = malefisher$estimate/(malefisher$estimate +1)*100
+print(effectivenessmale)
+```
+
+```{r}
+low=(malefisher$conf.int[1]/(malefisher$conf.int[1] +1))*100
+hi=(malefisher$conf.int[2]/(malefisher$conf.int[2] +1))*100
+options(digits=2)
+```
 
 
 
+Above is the effectiveness for the covid-19 vaccine for males. If the effectiveness is above 50% that means that the vaccine is effective. Based on the interval seen above, we can conclude that the vaccine is effective for males from getting covid-19. 
+
+The odds ratio is approximately how effective the vaccine is. The odds ratio for the guys can be seen above as 73.8. The effectiveness confidence interval for males is 68.85 to 78.32.
 
 
 ## Females
