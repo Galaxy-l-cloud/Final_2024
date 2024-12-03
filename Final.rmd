@@ -120,6 +120,26 @@ The numerical results for female individuals shows us that the females that took
 From this data we can see that while the vaccine is mostly effective, a lot of females that took the vaccine still got sick from Covid, However more half of females that took the placebo got sick, so it is still recommended that females take the vaccine.
 
 
+### Inferential
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+femalefisher <- fisher.test(table1)
+femalefisher
+```
+
+
+Three tests were performed to identify if dying from covid is independent of an individuals sex.The p-value for the first test 1.914e-08, for the second test the p-value is 0 and for the third test the p-value is also 1.246e-08. This indicates the statistical probability of dying from covid being related to the sex of the individual. The p-values of 1.246e-08 and 1.914e-08 are very small indicating the probability's vaccine effectiveness in female individuals. The odds ratio of 1.856237 represents how much more likely females that took a placebo vs the vaccine were to get the Covid19 virus.
+
+
+
+### Confidence Interval
+
+
+
+
+
 ## LGBTQ
 
 
