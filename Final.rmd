@@ -170,6 +170,34 @@ The odds ratio is approximately how effective the vaccine is. The odds ratio for
 
 ## LGBTQ
 
+### Graphical Results
+
+```{r}
+dd2 <- lgbtq %>% group_by(infected,treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
+
+
+# the group_by followed by summarize(count=n())
+
+basicC <- ggplot(dd2,aes(x=infected,y=count,fill=treatment))
+basicC + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
+
+
+The graphical data shows us that lgbtq individuals that took the vaccine in contrast to the lgbtq individuals that took the placebo were less likely to get Covid19. About 20% of lgbtq individuals that took the vaccine got sick from Covid19 while more than 70% nearly 80% of lgbtq individuals that took the placebo did get sick from Covid19. The vaccine seems to be very effective for this group.
+
+### Numerical Results
+
+### Inferential Results
+
+### Confidence Interval
+
+
+
 
 
 ## Druggies
