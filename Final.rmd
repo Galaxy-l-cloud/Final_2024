@@ -190,7 +190,20 @@ basicCC + geom_bar(stat="identity", position = "dodge")
 
 The graphical data shows us that lgbtq individuals that took the vaccine in contrast to the lgbtq individuals that took the placebo were less likely to get Covid19. About 20% of lgbtq individuals that took the vaccine got sick from Covid19 while more than 70% nearly 80% of lgbtq individuals that took the placebo did get sick from Covid19. The vaccine seems to be very effective for this group.
 
+
 ### Numerical Results
+
+```{r}
+table1 <- xtabs(~infected + treatment, data=lgbtq)
+rowPerc(table1)
+colPerc(table1)
+```
+
+The numerical results for lgbtq individuals shows us that the lgbtq group that took the placebo were 80% more likely to get Covid19. The lgbtq group that took the vaccine were at 20% in comparison. We also see that the lgbtq group that did not get sick from covid whether they took the placebo or the vaccine were at 48% for the individuals that took the placebo and 52% for those that took the vaccine. We are also given ratios of the likelihood of placebo and vaccine lgbtq in contracting the virus. For the lgbtq group that took the placebo vs lgbtq individuals that were vaccinated it was a 3:0 ratio, so again lgbtq's that took the placebo were more likely to get covid than those that took the vaccine.
+
+From this data we can see that it is highly recommended that lgbtq individuals take the covid19 vaccine as statistically it is very effective.
+
+
 
 ### Inferential Results
 
