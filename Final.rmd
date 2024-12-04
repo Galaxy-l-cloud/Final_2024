@@ -240,5 +240,40 @@ The odds ratio is approximately how effective the vaccine is. The odds ratio for
 
 ## Druggies
 
+### Graphical Results
+
+
+```{r}
+dd2 <- druguser %>% group_by(infected,treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
+
+
+# the group_by followed by summarize(count=n())
+
+basicC <- ggplot(dd2,aes(x=infected,y=count,fill=treatment))
+basicC + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
+
+The graphical data shows us that drug users that took the vaccine in contrast to the drug users that took the placebo were highly likely to get Covid19. More than 75% of drug users that took the vaccine got sick from Covid19 while less than 25% of drug users that took the placebo got sick from Covid19. The vaccine seems to be very ineffective for this group.     
+
+
+### Numerical
+
+```{r}
+table1 <- xtabs(~infected + treatment, data=druguser)
+rowPerc(table1)
+colPerc(table1)
+```
+
+The numerical results for drug users shows us that the drug users that took the placebo were only 8.3% likely to get Covid19. The drug users that took the vaccine were at 91.7% in comparison. We also see that the drug users that did not get sick from covid whether they took the placebo or the vaccine were at 51% for the individuals that took the placebo and 49% for those that took the vaccine. We are also given ratios of the likelihood of placebo and vaccine drug users in contracting the virus. For the drug users that took the placebo vs drug users that were vaccinated it was a 0:3 ratio, so again drug users that took the placebo were less likely to get covid than those that took the vaccine.
+
+From this data we can see that it is heavily advised drug users do not take the vaccine.
+
+
+
 
 # Overall Results and Conclusions
