@@ -271,9 +271,20 @@ colPerc(table1)
 
 The numerical results for drug users shows us that the drug users that took the placebo were only 8.3% likely to get Covid19. The drug users that took the vaccine were at 91.7% in comparison. We also see that the drug users that did not get sick from covid whether they took the placebo or the vaccine were at 51% for the individuals that took the placebo and 49% for those that took the vaccine. We are also given ratios of the likelihood of placebo and vaccine drug users in contracting the virus. For the drug users that took the placebo vs drug users that were vaccinated it was a 0:3 ratio, so again drug users that took the placebo were less likely to get covid than those that took the vaccine.
 
-From this data we can see that it is heavily advised drug users do not take the vaccine.   
+From this data we can see that it is heavily advised drug users do not take the vaccine.
 
 
+### Inferential
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+druguserfisher <- fisher.test(table1)
+druguserfisher
+```
+
+
+Three tests were performed to identify if dying from covid is independent of an individuals drug usage. The p-value for the first test 1e-10, for the second test the p-value is 0 and for the third test the p-value is 3e-12. This indicates the statistical probability of dying from covid being related to drug usage of the individual. The p-value of 1e-10 is very small indicating the probability's vaccine effectiveness in drug using individuals. The odds ratio of 0.087 represents how much more likely drug users that took a placebo vs the vaccine were to get the Covid19 virus.
 
 
 # Overall Results and Conclusions
