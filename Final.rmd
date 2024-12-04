@@ -306,5 +306,20 @@ Above is the effectiveness for the covid-19 vaccine for drug users. If the effec
 The odds ratio is approximately how effective the vaccine is. The odds ratio for the drug users can be seen above as 8. The effectiveness confidence interval for drug users is 2.65 to 17.86.
 
 
-
 # Overall Results and Conclusions
+
+We wanted to see vaccine effectiveness for 4 different groups of people, males, females, lgbtq, and drug users and whether vaccine effectiveness was independent of sex, sexual orientation, or drug usage. We used graphical data to visually see how each group was affected by the vaccine, then numerical data to see the percentage of individuals and vaccine effectiveness. Then we used the Pearson Chi Squared Test to statistically compare the effectiveness of the Covid19 vaccine vs a placebo vaccine. Then we took an effectiveness confidence interval to solidify our results.
+
+For the Group of Males we saw that the vaccine was more than 50% effective and it is highly recommended males take the vaccine.
+
+For the group of females, the vaccine was also more than 50% effective, however the group of females when compared to males regarding independence of vaccine effectiveness and sex, we see that females were 10% more likely to get sick from covid19 even when given the vaccine. It is still recommended females take the covid19 vaccine.
+
+For the lgbtq group we saw the vaccine was more than 50% effective at 80% effectiveness. It is highly recommended lgbtq individuals take the covid19 vaccine as it seems that vaccine effectiveness is completely independent of sexual orientation.
+
+For the drug users, the vaccine was extremely ineffective at only 8% effectiveness. Drug users are strongly advised from taking the vaccine. This shows that drug usage and vaccine effectiveness are not independent of each other and drug users are more likely to contract covid even if given the vaccine.
+
+
+
+
+
+
