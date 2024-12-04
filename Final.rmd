@@ -286,5 +286,25 @@ druguserfisher
 
 Three tests were performed to identify if dying from covid is independent of an individuals drug usage. The p-value for the first test 1e-10, for the second test the p-value is 0 and for the third test the p-value is 3e-12. This indicates the statistical probability of dying from covid being related to drug usage of the individual. The p-value of 1e-10 is very small indicating the probability's vaccine effectiveness in drug using individuals. The odds ratio of 0.087 represents how much more likely drug users that took a placebo vs the vaccine were to get the Covid19 virus.
 
+### Confidence Interval
+
+```{r}
+effect <- druguserfisher$p.value/(druguserfisher$p.value +1)
+effectivenessdruguser = druguserfisher$estimate/(druguserfisher$estimate +1)*100
+print(effectivenessdruguser)
+```
+
+```{r}
+low=(druguserfisher$conf.int[1]/(druguserfisher$conf.int[1] +1))*100
+hi=(druguserfisher$conf.int[2]/(druguserfisher$conf.int[2] +1))*100
+options(digits=2)
+```
+
+
+Above is the effectiveness for the covid-19 vaccine for drug users. If the effectiveness is above 50% that means that the vaccine is effective. Based on the interval seen above, we can conclude that the vaccine is ineffective for drug users from getting covid-19. 
+
+The odds ratio is approximately how effective the vaccine is. The odds ratio for the drug users can be seen above as 8. The effectiveness confidence interval for drug users is 2.65 to 17.86.
+
+
 
 # Overall Results and Conclusions
